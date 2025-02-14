@@ -3,6 +3,7 @@
 # Pygame Template
 
 import pygame
+from letters import a_letter, b_letter
 import config
 pygame.init()
 
@@ -35,6 +36,12 @@ def main():
 
     # Fills window
     screen.fill(config.WHITE)
+
+    # Draws lines
+    for line in a_letter:
+      pygame.draw.line(screen, config.RED, line[0], line[1], config.weight)
+    for line in b_letter:
+      pygame.draw.line(screen, config.BLUE, line[0], line[1], config.weight)
 
     # Updates the Display
     pygame.display.flip()
